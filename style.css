@@ -1,0 +1,14 @@
+body {
+  font-family: 'Robot', sans-serif;
+  padding: 1em;
+  text-align: center;
+}
+
+input[type="text"] {
+  width: 30em;
+  margin-bottom: 1em;
+}
+
+.results-container {
+  text-align: left;
+}
