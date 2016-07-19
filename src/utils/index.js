@@ -49,6 +49,7 @@ export default class Utils {
         artists={artists}
         url={track.external_urls.spotify}
         name={track.name}
+        key={track.id}
       />
     })
   }
