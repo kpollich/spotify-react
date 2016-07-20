@@ -15,9 +15,9 @@ export default class ResultsContainer extends Component {
       return (<i>Search for a song, artist, or album</i>)
     }
 
-    const albums = Utils.getAlbums(this.props.data.albums).slice(10)
-    const artists = Utils.getArtists(this.props.data.artists).slice(10)
-    const tracks = Utils.getTracks(this.props.data.tracks).slice(10)
+    const albums = Utils.getAlbums(this.props.data.albums)
+    const artists = Utils.getArtists(this.props.data.artists)
+    const tracks = Utils.getTracks(this.props.data.tracks)
 
     return (
       <div className="results-container">
