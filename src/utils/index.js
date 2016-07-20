@@ -4,6 +4,8 @@ import Album from '../components/Album'
 import Artist from '../components/Artist'
 import Track from '../components/Track'
 
+// Contains methods for marshaling Spotify's responses into data
+// we can use for our components
 export default class Utils {
   static getAlbums (albums) {
     return albums.items.map((album) => {
