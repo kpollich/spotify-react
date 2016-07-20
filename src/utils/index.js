@@ -7,9 +7,12 @@ import Track from '../components/Track'
 export default class Utils {
   static getAlbums (albums) {
     return albums.items.map((album) => {
+      const image = album.images[0]
+      const imageUrl = image ? image.url : '/spotify-logo.png'
+
       return <Album
         url={album.external_urls.spotify}
-        image={album.images[1]}
+        image={imageUrl}
         name={album.name}
         key={album.id}
       />
@@ -18,11 +21,14 @@ export default class Utils {
 
   static getArtists (artists) {
     return artists.items.map((artist) => {
+      const image = artist.images[0]
+      const imageUrl = image ? image.url : '/spotify-logo.png'
+
       return <Artist
         url={artist.external_urls.spotify}
         followers={artist.followers.total}
         genres={artist.genres}
-        images={artist.images}
+        image={imageUrl}
         name={artist.name}
         key={artist.id}
       />

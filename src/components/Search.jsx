@@ -5,18 +5,26 @@ import ResultsContainer from './ResultsContainer'
 export default class Search extends Component {
   constructor (props) {
     super(props)
-    this.state = { data: {}, inputCleared: false }
+    this.state = { query: '', data: {}, inputCleared: false }
   }
 
   handleChange (event) {
-    this.submitSearch(event.target.value)
+    const query = event.target.value.trim().toLowerCase()
+
+    // Don't duplicate searches or send redundant network requests
+    if (this.state.query === query) {
+      return
+    }
+
+    this.setState({ query })
+    this.submitSearch(query)
   }
 
   submitSearch (keyword) {
-    // If the keyword is null, set the data object to an empty object and
+    // If the keyword isn't present, set the data object to an empty object and
     // set a flag that the input has been cleared so we don't render any
     // pending AJAX requests after the user clears the input box
-    if (!keyword) {
+    if (!keyword.length > 0) {
       this.setState({ data: {}, inputCleared: true })
       return
     }
@@ -27,8 +35,9 @@ export default class Search extends Component {
     const url = `https://api.spotify.com/v1/search?q=${encodeURIComponent(keyword)}&type=album,artist,track`
 
     $.getJSON(url, function (data) {
-      // If the input field has been cleared, don't render these results
-      if (this.state.inputCleared) {
+      // If the input field has been cleared or if Spotify returned an empty response,
+      // don't render these results
+      if (this.state.inputCleared || !data) {
         return
       }
 
