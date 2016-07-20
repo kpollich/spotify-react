@@ -6,27 +6,14 @@ export default class Artist extends Component {
   }
 
   render () {
-    const resultWithoutImage = (
-    <div className="artist">
-      <h3><a href={this.props.url}>{this.props.name}</a></h3>
-    </div>
-    )
-
-    if (!this.props.images) {
-      return resultWithoutImage
-    }
-
     const image = this.props.images.filter((x) => x.height === 300 && x.width === 300)[0]
-
-    if (!image) {
-      return resultWithoutImage
-    }
+    const imageUrl = image ? image.url : '/spotify-logo.png'
 
     return (
-    <div className="artist">
-      <h3><a href={this.props.url}>{this.props.name}</a></h3>
-      <img src={image.url} />
-    </div>
+      <div className="result">
+        <img className="result-img" src={imageUrl} />
+        <a href={this.props.url}>{this.props.name}</a>
+      </div>
     )
   }
 }

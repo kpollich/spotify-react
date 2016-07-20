@@ -38,14 +38,14 @@ export default class Search extends Component {
 
   render () {
     return (
-    <div>
-      <div className="search-container">
-        <input type="text" className="search-bar" onChange={this.handleChange.bind(this)} />
-      </div>
       <div>
-        <ResultsContainer data={this.state.data} />
+        <div className="search-container">
+          <input type="text" className="search-bar" onChange={this.handleChange.bind(this)} />
+        </div>
+        <div>
+          <ResultsContainer data={this.state.data} />
+        </div>
       </div>
-    </div>
     )
   }
 }
