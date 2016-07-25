@@ -1,7 +1,9 @@
 body {
-  font-family: 'Robot', sans-serif;
+  font-family: 'Roboto', sans-serif;
   padding: 1em;
   text-align: center;
+  color: #141414;
+  background-color: #f2f1f1;
 }
 
 input[type="text"] {
@@ -16,10 +18,14 @@ img {
 
 .results-container {
   text-align: left;
+  margin: auto auto;
+  width: 75%;
 }
 
 .result {
   padding: .5em;
+  background-color: #dfdfdf;
+  margin-bottom: .5em;
 }
 
 .result a {
@@ -33,4 +39,24 @@ img {
 
 .result-track {
   margin: .5em 0 .5em 0;
+}
+
+.followers {
+  display: inline-block;
+  float: right;
+}
+
+.content {
+  width: 80%;
+  margin: auto auto;
+}
+
+a {
+  text-decoration: none;
+  color: #1b9841;
+  transition: all .1s linear;
+}
+
+a:hover {
+  color: #57c127;
 }

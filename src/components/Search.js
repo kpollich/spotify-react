@@ -54,7 +54,7 @@ export default class Search extends Component {
         <div className="search-container">
           <input type="text" className="search-bar" onChange={this.handleChange.bind(this)} />
         </div>
-        <div>
+        <div className="content">
           <ResultsContainer data={this.state.data} />
         </div>
       </div>

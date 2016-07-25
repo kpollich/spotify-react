@@ -29,7 +29,6 @@ export default class Utils {
       return <Artist
         url={artist.external_urls.spotify}
         followers={artist.followers.total}
-        genres={artist.genres}
         image={imageUrl}
         name={artist.name}
         key={artist.id}

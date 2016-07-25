@@ -6,6 +6,7 @@ export default class Artist extends Component {
       <div className="result">
         <img className="result-img" src={this.props.image} />
         <a href={this.props.url}>{this.props.name}</a>
+        <span className="followers">{this.props.followers} followers</span>
       </div>
     )
   }
