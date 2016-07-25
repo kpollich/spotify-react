@@ -1,0 +1,36 @@
+body {
+  font-family: 'Robot', sans-serif;
+  padding: 1em;
+  text-align: center;
+}
+
+input[type="text"] {
+  width: 30em;
+  margin-bottom: 1em;
+}
+
+img {
+  height: 64px;
+  width: 64px;
+}
+
+.results-container {
+  text-align: left;
+}
+
+.result {
+  padding: .5em;
+}
+
+.result a {
+  vertical-align: middle;
+}
+
+.result-img {
+  vertical-align: middle;
+  margin-right: 1em;
+}
+
+.result-track {
+  margin: .5em 0 .5em 0;
+}
