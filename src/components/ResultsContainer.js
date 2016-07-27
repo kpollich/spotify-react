@@ -4,7 +4,7 @@ import Utils from '../utils'
 
 export default class ResultsContainer extends Component {
   render () {
-    if ($.isEmptyObject(this.props.data)) {
+    if (Object.keys(this.props.data).length === 0) {
       return (<i>Search for a song, artist, or album</i>)
     }
 

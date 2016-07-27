@@ -34,18 +34,20 @@ export default class Search extends Component {
 
     const url = `https://api.spotify.com/v1/search?q=${encodeURIComponent(keyword)}&type=album,artist,track`
 
-    $.getJSON(url, function (data) {
-      // If the input field has been cleared or if Spotify returned an empty response,
-      // don't render these results. There is also a case where the timing of a response
-      // is in a state such that we could render results for a previous state of the user's
-      // query. So, if the results from this keyword do not match what's in the component's
-      // state, we ignore those results as well.
-      if (this.state.inputCleared || !data || keyword !== this.state.query) {
-        return
-      }
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        // If the input field has been cleared or if Spotify returned an empty response,
+        // don't render these results. There is also a case where the timing of a response
+        // is in a state such that we could render results for a previous state of the user's
+        // query. So, if the results from this keyword do not match what's in the component's
+        // state, we ignore those results as well.
+        if (this.state.inputCleared || !data || keyword !== this.state.query) {
+          return
+        }
 
-      this.setState({ data })
-    }.bind(this))
+        this.setState({ data })
+      })
   }
 
   render () {
