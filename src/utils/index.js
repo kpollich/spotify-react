@@ -4,13 +4,15 @@ import Album from '../components/Album'
 import Artist from '../components/Artist'
 import Track from '../components/Track'
 
+const spotifyLogoUrl = 'http://www.freeiconspng.com/uploads/spotify-icon-26.png'
+
 // Contains methods for marshaling Spotify's responses into data
 // we can use for our components
 export default class Utils {
   static getAlbums (albums) {
     return albums.items.map((album) => {
       const image = album.images[0]
-      const imageUrl = image ? image.url : '/spotify-logo.png'
+      const imageUrl = image ? image.url : spotifyLogoUrl
 
       return <Album
         url={album.external_urls.spotify}
@@ -24,7 +26,7 @@ export default class Utils {
   static getArtists (artists) {
     return artists.items.map((artist) => {
       const image = artist.images[0]
-      const imageUrl = image ? image.url : '/spotify-logo.png'
+      const imageUrl = image ? image.url : spotifyLogoUrl
 
       return <Artist
         url={artist.external_urls.spotify}
