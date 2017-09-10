@@ -1,4 +1,6 @@
-# Spotify Search with React
+# Spotify Search with React (Deprecated)
+
+**NOTE** - This project no longer works as far as I know because of breaking changes to Spotify's public API. 
 
 Just a little proof of concept/learning experience to search Spotify using their open search API, and to render results using React. Recently converted this project to Facebook's [boilerplate](https://github.com/facebookincubator/create-react-app) project setup. ES6, Webpack, Babel, etc. Check out their repo for more info.
 
